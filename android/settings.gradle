@@ -1,0 +1,5 @@
+rootProject.name = 'shareMenu'
+include ':react-native-file-share-intent'
+project(':react-native-file-share-intent').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-file-share-intent/android')
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':app'

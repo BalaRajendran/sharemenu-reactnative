@@ -1,0 +1,35 @@
+{
+    "name": "shareMenu",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "npmstart": "react-native start",
+        "test": "jest",
+        "lint": "eslint .",
+        "serve": "react-native run-android",
+        "android:clean": "cd android & gradlew clean & cd..",
+        "android:bundle": "SET NODE_ENV=prod & cd android & gradlew clean bundleRelease & cd..",
+        "android:rapk": "SET NODE_ENV=prod & cd android & gradlew clean app:assembleRelease & cd..",
+        "android:dapk": "SET NODE_ENV=prod & cd android & gradlew clean assembleDebug & cd..",
+        "start": "SET NODE_ENV=dev & cd android & gradlew clean & cd.. & concurrently \"npm run npmstart\" \"npm run serve\""
+    },
+    "dependencies": {
+        "react": "16.9.0",
+        "react-native": "0.61.5",
+        "react-native-file-share-intent": "^1.1.2"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.7.4",
+        "@babel/runtime": "^7.7.4",
+        "@react-native-community/eslint-config": "^0.0.5",
+        "babel-jest": "^24.9.0",
+        "concurrently": "^5.0.0",
+        "eslint": "^6.7.1",
+        "jest": "^24.9.0",
+        "metro-react-native-babel-preset": "^0.57.0",
+        "react-test-renderer": "16.9.0"
+    },
+    "jest": {
+        "preset": "react-native"
+    }
+}
